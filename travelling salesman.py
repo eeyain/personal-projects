@@ -21,9 +21,8 @@ def point_generator(n): #generates n random points, from (0,0) to (99,99)
 #input format: <list of points in the tuple format (x,y)>, <start point in format (x,y)>
 def bruteforce_TSP(points, start): #recommended max size of points is 10
         start_t = time()
-        perms = list(permutations(points))
         combine = lambda x: [start]+list(x)
-        perms = list(map(combine, perms)) 
+        perms = list(map(combine, permutations(points))) 
 
         min_r = perms[0]                
         for perm in perms[1:]:
